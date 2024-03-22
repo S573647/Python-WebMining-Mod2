@@ -14623,19 +14623,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Function to divide two numbers</span>
-<span class="k">def</span> <span class="nf">divide_numbers</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">x</span> <span class="o">/</span> <span class="n">y</span>
-
-<span class="c1"># Input two numbers</span>
-
-<span class="n">numerator</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">denominator</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="c1"># Divide the numbers</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">divide_numbers</span><span class="p">(</span><span class="n">numerator</span><span class="p">,</span> <span class="n">denominator</span><span class="p">)</span>
-
-<span class="c1"># Print the result with an appropriate label</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The result of dividing </span><span class="si">{</span><span class="n">numerator</span><span class="si">}</span><span class="s2"> by </span><span class="si">{</span><span class="n">denominator</span><span class="si">}</span><span class="s2"> is: </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">divide</span> <span class="o">=</span> <span class="mi">12</span><span class="o">/</span><span class="mi">3</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'The output of 12 / 3 is'</span><span class="p">,</span> <span class="n">divide</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14657,7 +14646,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>The result of dividing 10 by 5 is: 2.0
+<pre>The output of 12 / 3 is 4.0
 </pre>
 </div>
 </div>
@@ -14688,16 +14677,17 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Function to calculate factorial</span>
-<span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-        <span class="n">result</span> <span class="o">*=</span> <span class="n">i</span>
-    <span class="k">return</span> <span class="n">result</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Compute the factorial of n"""</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span> 
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="c1"># Loop to calculate factorial of integers from 1 through 10</span>
+<span class="c1"># Calculate factorial from 1 to 10</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Factorial of </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">factorial</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="c1"># Factorial of i</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The factorial of </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> is: </span><span class="si">{</span><span class="n">factorial</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14719,16 +14709,16 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Factorial of 1: 1
-Factorial of 2: 2
-Factorial of 3: 6
-Factorial of 4: 24
-Factorial of 5: 120
-Factorial of 6: 720
-Factorial of 7: 5040
-Factorial of 8: 40320
-Factorial of 9: 362880
-Factorial of 10: 3628800
+<pre>The factorial of 1 is: 1
+The factorial of 2 is: 2
+The factorial of 3 is: 6
+The factorial of 4 is: 24
+The factorial of 5 is: 120
+The factorial of 6 is: 720
+The factorial of 7 is: 5040
+The factorial of 8 is: 40320
+The factorial of 9 is: 362880
+The factorial of 10 is: 3628800
 </pre>
 </div>
 </div>
@@ -14759,17 +14749,15 @@ Factorial of 10: 3628800
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">average</span><span class="p">(</span><span class="n">mylist</span><span class="p">):</span>
-    <span class="nb">sum</span> <span class="o">=</span><span class="mi">0</span>
-    <span class="n">index</span><span class="o">=</span><span class="mi">0</span>
-    <span class="k">while</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">mylist</span><span class="p">):</span>
-        <span class="nb">sum</span><span class="o">=</span><span class="nb">sum</span><span class="o">+</span><span class="n">mylist</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
-        <span class="n">index</span> <span class="o">+=</span><span class="mi">1</span>
-    <span class="n">result</span><span class="o">=</span><span class="nb">sum</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">result</span>
-    
-<span class="n">testlist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Average of the list </span><span class="si">{</span><span class="n">testlist</span><span class="si">}</span><span class="s2"> is : </span><span class="si">{</span><span class="n">average</span><span class="p">(</span><span class="n">testlist</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">average</span><span class="p">(</span><span class="n">values</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+
+
+<span class="n">testlist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">avg</span> <span class="o">=</span> <span class="n">average</span><span class="p">(</span><span class="n">testlist</span><span class="p">)</span>
+
+<span class="c1"># Average of a list of values</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The average of the list is: </span><span class="si">{</span><span class="n">avg</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14791,7 +14779,7 @@ Factorial of 10: 3628800
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Average of the list [1, -1, 2, -2, 3, -3, 4, -4] is : 0.0
+<pre>The average of the list is: 0.0
 </pre>
 </div>
 </div>
@@ -14828,27 +14816,29 @@ Factorial of 10: 3628800
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># the variances of both lists should be relatively close to 1 (off by less than .15)</span>
-<span class="k">def</span> <span class="nf">calculate_variance</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
-    <span class="c1"># Calculate the mean</span>
-    <span class="n">mean</span><span class="o">=</span><span class="n">average</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">variance</span><span class="p">(</span><span class="n">values</span><span class="p">):</span>
+    <span class="c1"># computation of mean</span>
+    <span class="n">mean</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
     
-    <span class="c1"># Calculate the squared differences from the mean</span>
-    <span class="n">squared_diffs</span> <span class="o">=</span> <span class="p">[(</span><span class="n">x</span> <span class="o">-</span> <span class="n">mean</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">]</span>
+    <span class="c1"># Subtract the mean from every element and square the result</span>
+    <span class="n">squared_diff</span> <span class="o">=</span> <span class="p">[(</span><span class="n">x</span> <span class="o">-</span> <span class="n">mean</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">values</span><span class="p">]</span>
     
-    <span class="c1"># Calculate the variance</span>
-    <span class="n">variance</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">squared_diffs</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+    <span class="c1"># Sum the squared differences and divide by N</span>
+    <span class="n">variance</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">squared_diff</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
     
     <span class="k">return</span> <span class="n">variance</span>
 
-<span class="c1"># Example list of numbers</span>
-<span class="n">my_list1</span> <span class="o">=</span> <span class="p">[</span> <span class="mf">5.670e-1</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.480e+0</span><span class="p">,</span> <span class="o">-</span><span class="mf">5.570e-1</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.470e+0</span><span class="p">,</span> <span class="mf">7.340e-1</span><span class="p">,</span> <span class="mf">1.050e+0</span><span class="p">,</span> <span class="mf">4.480e-1</span><span class="p">,</span> <span class="mf">2.570e-1</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.970e+0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.460e+0</span><span class="p">]</span>
-<span class="n">my_list2</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">1.780e+0</span><span class="p">,</span> <span class="mf">2.640e-1</span><span class="p">,</span> <span class="mf">1.160e+0</span><span class="p">,</span> <span class="mf">9.080e-1</span><span class="p">,</span> <span class="mf">1.780e+0</span><span class="p">,</span> <span class="mf">1.080e+0</span><span class="p">,</span> <span class="mf">1.050e+0</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.630e-2</span><span class="p">,</span> <span class="mf">1.520e+0</span><span class="p">,</span> <span class="mf">5.350e-1</span><span class="p">]</span>
-<span class="c1"># Calculate the variance</span>
-<span class="n">variance1</span> <span class="o">=</span> <span class="n">calculate_variance</span><span class="p">(</span><span class="n">my_list1</span><span class="p">)</span>
-<span class="n">variance2</span> <span class="o">=</span> <span class="n">calculate_variance</span><span class="p">(</span><span class="n">my_list2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Variance for list1 </span><span class="si">{</span><span class="n">my_list1</span><span class="si">}</span><span class="s2">:"</span><span class="p">,</span> <span class="n">variance1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Variance for list2 </span><span class="si">{</span><span class="n">my_list2</span><span class="si">}</span><span class="s2">:"</span><span class="p">,</span> <span class="n">variance2</span><span class="p">)</span>
+
+<span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="mf">5.670e-1</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.480e+0</span><span class="p">,</span> <span class="o">-</span><span class="mf">5.570e-1</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.470e+0</span><span class="p">,</span> <span class="mf">7.340e-1</span><span class="p">,</span> <span class="mf">1.050e+0</span><span class="p">,</span> <span class="mf">4.480e-1</span><span class="p">,</span> <span class="mf">2.570e-1</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.970e+0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.460e+0</span><span class="p">]</span>
+<span class="n">list2</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">1.780e+0</span><span class="p">,</span> <span class="mf">2.640e-1</span><span class="p">,</span> <span class="mf">1.160e+0</span><span class="p">,</span> <span class="mf">9.080e-1</span><span class="p">,</span> <span class="mf">1.780e+0</span><span class="p">,</span> <span class="mf">1.080e+0</span><span class="p">,</span> <span class="mf">1.050e+0</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.630e-2</span><span class="p">,</span> <span class="mf">1.520e+0</span><span class="p">,</span> <span class="mf">5.350e-1</span><span class="p">]</span>
+
+<span class="c1"># Calculate the variances</span>
+<span class="n">variance1</span> <span class="o">=</span> <span class="n">variance</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span>
+<span class="n">variance2</span> <span class="o">=</span> <span class="n">variance</span><span class="p">(</span><span class="n">list2</span><span class="p">)</span>
+
+<span class="c1"># Printing the results</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The variance of list1 is: </span><span class="si">{</span><span class="n">variance1</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The variance of list2 is: </span><span class="si">{</span><span class="n">variance2</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14870,8 +14860,8 @@ Factorial of 10: 3628800
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Variance for list1 [0.567, -1.48, -0.557, -1.47, 0.734, 1.05, 0.448, 0.257, -1.97, -1.46]: 1.13973309
-Variance for list2 [-1.78, 0.264, 1.16, 0.908, 1.78, 1.08, 1.05, -0.0463, 1.52, 0.535]: 0.9257232841
+<pre>The variance of list1 is: 1.13973309
+The variance of list2 is: 0.9257232841
 </pre>
 </div>
 </div>
@@ -14910,19 +14900,19 @@ Variance for list2 [-1.78, 0.264, 1.16, 0.908, 1.78, 1.08, 1.05, -0.0463, 1.52, 
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create a list with at least 15 elements</span>
-<span class="n">my_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">210</span><span class="p">))</span>  <span class="c1"># For example, a list of numbers from 1 to 20</span>
+<span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span>
 
 <span class="c1"># Print the first 5 elements of the list</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"First 5 elements:"</span><span class="p">,</span> <span class="n">my_list</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"The first 5 elements:"</span><span class="p">,</span> <span class="n">my_list</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>
 
 <span class="c1"># Print the last 5 elements of the list</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Last 5 elements:"</span><span class="p">,</span> <span class="n">my_list</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"The last 5 elements:"</span><span class="p">,</span> <span class="n">my_list</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:])</span>
 
 <span class="c1"># Print the list reversed</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Reversed list:"</span><span class="p">,</span> <span class="n">my_list</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"The list reversed:"</span><span class="p">,</span> <span class="n">my_list</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 
 <span class="c1"># Print every second element in the list</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Every second element:"</span><span class="p">,</span> <span class="n">my_list</span><span class="p">[::</span><span class="mi">2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Every second element:"</span><span class="p">,</span> <span class="n">my_list</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">])</span>
 
 <span class="c1"># Print every third element in the list</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Every third element:"</span><span class="p">,</span> <span class="n">my_list</span><span class="p">[::</span><span class="mi">3</span><span class="p">])</span>
@@ -14947,11 +14937,11 @@ Variance for list2 [-1.78, 0.264, 1.16, 0.908, 1.78, 1.08, 1.05, -0.0463, 1.52, 
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>First 5 elements: [100, 101, 102, 103, 104]
-Last 5 elements: [205, 206, 207, 208, 209]
-Reversed list: [209, 208, 207, 206, 205, 204, 203, 202, 201, 200, 199, 198, 197, 196, 195, 194, 193, 192, 191, 190, 189, 188, 187, 186, 185, 184, 183, 182, 181, 180, 179, 178, 177, 176, 175, 174, 173, 172, 171, 170, 169, 168, 167, 166, 165, 164, 163, 162, 161, 160, 159, 158, 157, 156, 155, 154, 153, 152, 151, 150, 149, 148, 147, 146, 145, 144, 143, 142, 141, 140, 139, 138, 137, 136, 135, 134, 133, 132, 131, 130, 129, 128, 127, 126, 125, 124, 123, 122, 121, 120, 119, 118, 117, 116, 115, 114, 113, 112, 111, 110, 109, 108, 107, 106, 105, 104, 103, 102, 101, 100]
-Every second element: [100, 102, 104, 106, 108, 110, 112, 114, 116, 118, 120, 122, 124, 126, 128, 130, 132, 134, 136, 138, 140, 142, 144, 146, 148, 150, 152, 154, 156, 158, 160, 162, 164, 166, 168, 170, 172, 174, 176, 178, 180, 182, 184, 186, 188, 190, 192, 194, 196, 198, 200, 202, 204, 206, 208]
-Every third element: [100, 103, 106, 109, 112, 115, 118, 121, 124, 127, 130, 133, 136, 139, 142, 145, 148, 151, 154, 157, 160, 163, 166, 169, 172, 175, 178, 181, 184, 187, 190, 193, 196, 199, 202, 205, 208]
+<pre>The first 5 elements: [11, 12, 13, 14, 15]
+The last 5 elements: [21, 22, 23, 24, 25]
+The list reversed: [25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11]
+Every second element: [12, 14, 16, 18, 20, 22, 24]
+Every third element: [11, 14, 17, 20, 23]
 </pre>
 </div>
 </div>
@@ -14990,33 +14980,36 @@ Every third element: [100, 103, 106, 109, 112, 115, 118, 121, 124, 127, 130, 133
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create a dictionary with class information</span>
-<span class="n">class_info</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Web Mining and Applied NLP"</span><span class="p">,</span>
-    <span class="s2">"course_number"</span><span class="p">:</span> <span class="s2">"44-620"</span><span class="p">,</span>
-    <span class="s2">"semester"</span><span class="p">:</span> <span class="s2">"Spring 2024"</span><span class="p">,</span>
-    <span class="s2">"credit_hours"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-    <span class="s2">"learning_objectives"</span><span class="p">:</span> <span class="p">[</span>
-        <span class="s2">"Understand the fundamentals of web mining techniques and their applications"</span><span class="p">,</span>
-        <span class="s2">"Learn how to crawl and scrape web data effectively"</span><span class="p">,</span>
-        <span class="s2">"Explore techniques for preprocessing and cleaning web data"</span><span class="p">,</span>
-        <span class="s2">"Study methods for extracting useful information from web data, such as text and structured data"</span><span class="p">,</span>
-        <span class="s2">"Examine approaches for analyzing and visualizing web data"</span><span class="p">,</span>
-        <span class="s2">"Gain insights into the applications of natural language processing (NLP) in analyzing web data"</span><span class="p">,</span>
-        <span class="s2">"Learn how to apply NLP techniques to tasks such as sentiment analysis, named entity recognition, and topic modeling"</span><span class="p">,</span>
-        <span class="s2">"Develop practical skills through hands-on projects involving web data mining and NLP tasks"</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">course_info</span> <span class="o">=</span> <span class="p">{</span>
+<span class="s2">"Course name"</span><span class="p">:</span> <span class="s2">"Web Mining and Applied Natural Language Processing"</span><span class="p">,</span>
+    <span class="s2">"Course number"</span><span class="p">:</span> <span class="s2">"44-620"</span><span class="p">,</span>
+    <span class="s2">"Semester/term course taken"</span><span class="p">:</span> <span class="s2">"Spring 2024-OP2"</span><span class="p">,</span>
+    <span class="s2">"Course credit hours"</span><span class="p">:</span> <span class="s2">"3 credits"</span><span class="p">,</span>
+    <span class="s2">"List of course learning objectives"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">"Demonstrate a common Git workflow. (CO2)"</span><span class="p">,</span>
+        <span class="s2">"Install Python packages in a Virtual Environment. (CO1)"</span><span class="p">,</span>
+        <span class="s2">"Demonstrate basic Python competency (CO3, CO5)"</span><span class="p">,</span>
+        <span class="s2">"Work with Python Data Structures  (CO3, CO5)"</span><span class="p">,</span>
+        <span class="s2">"Interact with Python Notebooks (CO1, CO2, CO3, CO5)"</span><span class="p">,</span>
+        <span class="s2">"Use Git to manage source code. (CO2)"</span><span class="p">,</span>
+        <span class="s2">"Visualize common types of data with Matplotlib. (CO2, CO6)"</span><span class="p">,</span>
+        <span class="s2">"Explain conclusions drawn from visualizations. (CO6)"</span><span class="p">,</span>
+        <span class="s2">"Describe how to embed advanced visualizations in Notebooks, such as those in D3.js. (CO1, CO3, CO5, CO6)"</span><span class="p">,</span>
+        <span class="s2">"Describe the characteristics of JSON. (CO3)"</span><span class="p">,</span>
+        <span class="s2">"Describe a basic Natural Language Processing Pipeline. (CO4)"</span><span class="p">,</span>
+        <span class="s2">"Access web-based APIs for data. (CO2, CO3)"</span><span class="p">,</span>
+        <span class="s2">"Apply basic NLP and visualize result. (CO3, CO5, CO6)"</span><span class="p">,</span>
+        <span class="s2">"Describe the characteristics of XML/HTML and CSS. (CO3)"</span><span class="p">,</span>
+        <span class="s2">"Identify elements of a web page. (CO3)"</span><span class="p">,</span>
+        <span class="s2">"Retrieve web page programmatically. (CO3)"</span><span class="p">,</span>
+        <span class="s2">"Parse HTML to search for desired elements. (CO3)"</span><span class="p">,</span>
+        <span class="s2">"Apply NLP to web text. (CO3, CO5)"</span><span class="p">,</span>
+        <span class="s2">"Visualize results from processed web text. (CO6)"</span><span class="p">,</span>
+        <span class="s2">"Build on core course concepts though the final project. (CO1, CO2, CO3, CO4, CO5, CO6)"</span>
     <span class="p">]</span>
 <span class="p">}</span>
 
-<span class="c1"># Print the dictionary</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Class Information:"</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">class_info</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">"learning_objectives"</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">key</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span><span class="si">}</span><span class="s2">:"</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">objective</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="n">objective</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">key</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">course_info</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15038,20 +15031,7 @@ Every third element: [100, 103, 106, 109, 112, 115, 118, 121, 124, 127, 130, 133
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Class Information:
-Name: Web Mining and Applied NLP
-Course_number: 44-620
-Semester: Spring 2024
-Credit_hours: 3
-Learning_objectives:
-  1. Understand the fundamentals of web mining techniques and their applications
-  2. Learn how to crawl and scrape web data effectively
-  3. Explore techniques for preprocessing and cleaning web data
-  4. Study methods for extracting useful information from web data, such as text and structured data
-  5. Examine approaches for analyzing and visualizing web data
-  6. Gain insights into the applications of natural language processing (NLP) in analyzing web data
-  7. Learn how to apply NLP techniques to tasks such as sentiment analysis, named entity recognition, and topic modeling
-  8. Develop practical skills through hands-on projects involving web data mining and NLP tasks
+<pre>{&#39;Course name&#39;: &#39;Web Mining and Applied Natural Language Processing&#39;, &#39;Course number&#39;: &#39;44-620&#39;, &#39;Semester/term course taken&#39;: &#39;Spring 2024-OP2&#39;, &#39;Course credit hours&#39;: &#39;3 credits&#39;, &#39;List of course learning objectives&#39;: [&#39;Demonstrate a common Git workflow. (CO2)&#39;, &#39;Install Python packages in a Virtual Environment. (CO1)&#39;, &#39;Demonstrate basic Python competency (CO3, CO5)&#39;, &#39;Work with Python Data Structures  (CO3, CO5)&#39;, &#39;Interact with Python Notebooks (CO1, CO2, CO3, CO5)&#39;, &#39;Use Git to manage source code. (CO2)&#39;, &#39;Visualize common types of data with Matplotlib. (CO2, CO6)&#39;, &#39;Explain conclusions drawn from visualizations. (CO6)&#39;, &#39;Describe how to embed advanced visualizations in Notebooks, such as those in D3.js. (CO1, CO3, CO5, CO6)&#39;, &#39;Describe the characteristics of JSON. (CO3)&#39;, &#39;Describe a basic Natural Language Processing Pipeline. (CO4)&#39;, &#39;Access web-based APIs for data. (CO2, CO3)&#39;, &#39;Apply basic NLP and visualize result. (CO3, CO5, CO6)&#39;, &#39;Describe the characteristics of XML/HTML and CSS. (CO3)&#39;, &#39;Identify elements of a web page. (CO3)&#39;, &#39;Retrieve web page programmatically. (CO3)&#39;, &#39;Parse HTML to search for desired elements. (CO3)&#39;, &#39;Apply NLP to web text. (CO3, CO5)&#39;, &#39;Visualize results from processed web text. (CO6)&#39;, &#39;Build on core course concepts though the final project. (CO1, CO2, CO3, CO4, CO5, CO6)&#39;]}
 </pre>
 </div>
 </div>
@@ -15090,10 +15070,9 @@ Learning_objectives:
                              <span class="s1">'level 3'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'Mass Healing Word'</span><span class="p">,</span> <span class="s1">'Nondetection'</span><span class="p">,</span> <span class="s1">'Revivify'</span><span class="p">,</span> <span class="s1">'Feign Death'</span><span class="p">,</span> <span class="s1">'Speak with Dead'</span><span class="p">],</span>
                              <span class="s1">'level 4'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'Banishment'</span><span class="p">,</span> <span class="s1">'Confusion'</span><span class="p">]}</span>
                    <span class="p">}</span>
+
 <span class="c1"># Print the list of level 3 spells</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Level 3 Spells for"</span><span class="p">,</span> <span class="n">player_character</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span> <span class="o">+</span> <span class="s2">":"</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">spell</span> <span class="ow">in</span> <span class="n">player_character</span><span class="p">[</span><span class="s1">'spells'</span><span class="p">][</span><span class="s1">'level 3'</span><span class="p">]:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">spell</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Level 3 Spells:"</span><span class="p">,</span> <span class="n">player_character</span><span class="p">[</span><span class="s1">'spells'</span><span class="p">][</span><span class="s1">'level 3'</span><span class="p">])</span>
 </pre></div>
 
      </div>
@@ -15115,12 +15094,7 @@ Learning_objectives:
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Level 3 Spells for Kitab:
-Mass Healing Word
-Nondetection
-Revivify
-Feign Death
-Speak with Dead
+<pre>Level 3 Spells: [&#39;Mass Healing Word&#39;, &#39;Nondetection&#39;, &#39;Revivify&#39;, &#39;Feign Death&#39;, &#39;Speak with Dead&#39;]
 </pre>
 </div>
 </div>
@@ -15152,12 +15126,15 @@ Speak with Dead
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
-<span class="c1"># Determine the number of unique elements using a set</span>
-<span class="n">unique_elements</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
-<span class="n">num_unique</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">unique_elements</span><span class="p">)</span>
 
-<span class="c1"># Print the number of unique values</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Number of unique values in the list:"</span><span class="p">,</span> <span class="n">num_unique</span><span class="p">)</span>
+<span class="c1"># Convert the list to a set to remove duplicates</span>
+<span class="n">unique_values</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+
+<span class="c1"># Count the number of elements in the set</span>
+<span class="n">unique_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">unique_values</span><span class="p">)</span>
+
+<span class="c1"># Print the result</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Number of unique values in the list: </span><span class="si">{</span><span class="n">unique_count</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15203,7 +15180,8 @@ Speak with Dead
 **    **
 ***  ***
 ********</code></pre>
-<p>Make sure to add and submit both the new notebook and the changes to this notebook for this assignment.</p>
+<p>Make sure to add and submit both the new notebook and the changes to this notebook for this assignment.
+See the response of Question 10 at <a href="https://github.com/S573647/Python-WebMining-Mod2/blob/main/S573647.ipynb">Question 10 Response</a></p>
 
 </div>
 </div>
